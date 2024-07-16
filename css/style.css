@@ -1,0 +1,111 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    background-color: #fff;
+}
+
+/* HEADER */
+header {
+    background-color: #ff0000;
+    max-height: 100px;
+}
+
+.logo-img {
+    max-width: 12.5%;
+    min-width: 100px;
+}
+
+.main-color {
+    color: #fff;
+}
+
+#difficulty,
+#startBtn {
+    background-color: #fff;
+    border: none;
+    border-radius: 0px;
+    color: #ff0000;
+    padding: 10px;
+    transition: all 0.25s;
+}
+
+#startBtn:hover{
+    transform: scale(1.025);
+}
+#startBtn:active{
+    transform: scale(0.95);
+}
+
+/* FINE HEADER */
+
+/* MAIN */
+/* GRID */
+#grid {
+    width: 100%;
+}
+
+.game-card {
+    position: relative;
+    cursor: pointer;
+    aspect-ratio: 1/1;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+}
+
+.card-face-back,
+.card-face-front {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 20px;
+    -webkit-backface-visibility: hidden;
+    /* Safari */
+    backface-visibility: hidden;
+}
+
+.card-face-back{
+    padding: 20px;
+    background-color: rgb(22, 22, 122);
+}
+
+.card-face-front {
+    background-color: black;
+    padding: 20px;
+    transform: rotateY(180deg);
+}
+
+.game-card.flipped {
+    transform: rotateY(-180deg)
+}
+
+#time {
+    color: #ff0000;
+    text-align: center;
+    font-size: 30px;
+    margin: 10px 0px;
+}
+
+/* FINE GRID */
+
+@media screen and (max-width: 768px) {
+    .game-card{
+        width: calc(100% / 4 - 20px) !important;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .game-card{
+        width: calc(100% / 2 - 20px) !important;
+    }
+    .mg-title{
+        display: none;
+    }
+}
